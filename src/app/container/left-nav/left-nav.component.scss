@@ -1,0 +1,20 @@
+@import '../../../assets/scss/variable';
+
+nav {
+    display: inline-block;
+    float: left;
+    width: 100%;
+}
+
+nav ul {
+    margin: 0 2%;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    padding: 6%;
+    border-left: 6px solid $primary-color;
+}

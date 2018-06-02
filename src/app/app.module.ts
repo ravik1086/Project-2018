@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CourseCubeComponent } from './container/course-cube/course-cube.component';
 import { UtilsComponent } from './container/utils/utils.component';
+import { LeftNavComponent } from './container/left-nav/left-nav.component';
 
 const appRoute :Routes=[
   {
@@ -31,7 +32,8 @@ const appRoute :Routes=[
     HeaderComponent,
     FooterComponent,
     CourseCubeComponent,
-    UtilsComponent
+    UtilsComponent,
+    LeftNavComponent
   ],
   imports: [
     BrowserModule,
