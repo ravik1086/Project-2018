@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-cube.component.scss']
 })
 export class CourseCubeComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }

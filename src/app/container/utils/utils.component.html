@@ -1,0 +1,21 @@
+<div>
+  <button (click)="subject()">Subject</button>
+  <div *ngFor="let subject of subjectList">
+    {{subject}}
+  </div>
+</div>
+-----------------------------------------------------
+<div>
+  <button (click)="replaySubject()">Replay Subject</button>
+  <div *ngFor="let replaySubject of replaySubjectList">
+    {{replaySubject}}
+  </div>
+</div>
+
+-----------------------------------------------------
+<div>
+  <button (click)="behaviorSubject()">Behavior Subject</button>
+  <div *ngFor="let behaviorSubject of behaviorSubjectList">
+    {{behaviorSubject}}
+  </div>
+</div>
