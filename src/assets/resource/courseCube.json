@@ -1,0 +1,60 @@
+{
+    "courseCube":[
+        {
+            "id": 1,
+            "courseName": "Angular 6",
+            "duration": "2.5",
+            "fee": 10000,
+            "trainer":[],
+            "students":[]
+        },
+        {
+            "id": 2,
+            "courseName": "Python",
+            "duration": "2.5",
+            "fee": 20000
+        },
+        {
+            "id": 3,
+            "courseName": "AWS",
+            "duration": "2.5",
+            "fee": 20500
+        },
+        {
+            "id": 4,
+            "courseName": "JAVA",
+            "duration": "2.5",
+            "fee": 15000
+        },
+        {
+            "id": 5,
+            "courseName": "Ruby",
+            "duration": "2.5",
+            "fee": 16000
+        },
+        {
+            "id": 6,
+            "courseName": "Node Js",
+            "duration": "2.5",
+            "fee": 10000
+        },
+        {
+            "id": 7,
+            "courseName": "CSS - 3",
+            "duration": "2.5",
+            "fee": 10000
+        },
+        {
+            "id": 8,
+            "courseName": "HTML - 5",
+            "duration": "2.5",
+            "fee": 30000
+        },
+        {
+            "id": 9,
+            "courseName": "CI/CD",
+            "duration": "2.5",
+            "fee": 10000
+        }
+    ]
+}

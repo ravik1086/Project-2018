@@ -1,0 +1,56 @@
+@import 'variable';
+
+@mixin font($size,$color,$family) { 
+    font-size: $size; 
+    color:$color;
+    font-family: $family;
+}
+
+h1{
+    @include font(25px, $primary-color_1, $font);
+    border-left: 5px solid $primary-color_2;
+    padding-left: 10px;
+    margin-left: 10px;
+    &.h1-invert{
+        @include font(25px, $secondary-color, $font);
+        border-left: 5px solid $shadow-color;
+    }
+}
+
+h2{
+    @include font(20px, $primary-color_1, $font);
+    &.h2-invert{
+        @include font(20px, $secondary-color, $font);
+    }
+}
+
+h3, p{
+    @include font(15px, $primary-color_1, $font);
+    &.h3-invert, &.p-invert{
+        @include font(15px, $secondary-color, $font);
+    }
+}
+
+
+
+label{
+    @include font(15px, $font-color, $font);
+    &.label-invert{
+        @include font(15px, $secondary-color, $font);
+    }
+}
+
+a{
+    @include font(15px, $font-color, $font);
+    text-decoration: none;
+    &.active{
+        color:$primary-color_2;
+    }
+    &.a-invert{
+        @include font(15px, $secondary-color, $font);
+    }
+}
+
+
+
+
