@@ -1,36 +1,29 @@
+<h1>
+    List of Course <button (click)="addCourse()">Add</button>
+</h1>
 
-    <h1>
-        List of Users
-    </h1>
-
-    <div class='clear'>
-        <div class="user-card">
-            <input type="checkbox" class="select-user" id="user-selection" />
-            <div class="card" for="user-selection">
-                <div class="front user-block">
-                    <div class='user-details'>
-                        <label class="name"> Name</label>
-                        <label class="value"> user-1</label>
-                    </div>
-                    <div class='user-details'>
-                        <label class="name"> Description</label>
-                        <label class="value"> Description for user -1</label>
-                    </div>
-                    <div class='user-details'>
-                        <label class="name"> Age</label>
-                        <label class="value"> 25</label>
-                    </div>
-                    <div class='user-details'>
-                        <label class="name"> Place</label>
-                        <label class="value"> Bangalore</label>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="back-content">
-                        User-1 has been selected.
-                    </div>
-                </div>
-            </div>
+<div class="user-data">
+    <div class="card" *ngFor="let course of courseCubeList">
+        <div class="header">
+            <h3>{{course.courseName}}</h3>
         </div>
+        <div class="content">
+            <div class="description">
+                <label class="name">ID</label>
+                <label class="value">{{course.id}}</label>
+            </div>
 
+            <div class="description">
+                <label class="name">Duration</label>
+                <label class="value">{{course.duration}}</label>
+            </div>
+
+            <div class="description">
+                <label class="name">Fee</label>
+                <label class="value">{{course.fee}}</label>
+            </div>
+
+        </div>
     </div>
+</div>
+
