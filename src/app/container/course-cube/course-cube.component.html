@@ -4,26 +4,7 @@
 
 <div class="user-data">
     <div class="card" *ngFor="let course of courseCubeList">
-        <div class="header">
-            <h3>{{course.courseName}}</h3>
-        </div>
-        <div class="content">
-            <div class="description">
-                <label class="name">ID</label>
-                <label class="value">{{course.id}}</label>
-            </div>
-
-            <div class="description">
-                <label class="name">Duration</label>
-                <label class="value">{{course.duration}}</label>
-            </div>
-
-            <div class="description">
-                <label class="name">Fee</label>
-                <label class="value">{{course.fee}}</label>
-            </div>
-
-        </div>
+        <cc-card [course]="course" ></cc-card>
     </div>
 </div>
 

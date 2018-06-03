@@ -10,7 +10,7 @@ import { CourseCubeService } from '../../service/course-cube.service';
 })
 export class CourseCubeComponent implements OnInit {
   courseCubeList:Array<CourseCube> = new Array<CourseCube>();
-
+  heroInput:any = "";
   constructor(public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
