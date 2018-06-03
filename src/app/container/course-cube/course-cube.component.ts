@@ -27,8 +27,18 @@ export class CourseCubeComponent implements OnInit {
   }
 
   getCourseCubeList(){
-    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse: Array<CourseCube>) => {
+    this.courseCubeService.getCourseCubeList().subscribe(
+      //Success
+      (courseCubeResponse: Array<CourseCube>) => {
         this.courseCubeList = courseCubeResponse ? courseCubeResponse["courseCube"] :[];
-    });
+      },
+      // error
+      (error) => {
+        console.log(error);
+      },
+      // finally
+      ()=>{
+        console.log('finally');
+      });
   }
 }

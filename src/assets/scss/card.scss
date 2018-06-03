@@ -17,6 +17,7 @@
         .content{
             border: 1px solid $shadow_color;
             .description{
+                clear:both;
                 label{
                     width: 45%;
                     float: left;
