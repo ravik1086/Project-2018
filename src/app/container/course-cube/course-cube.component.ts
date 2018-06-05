@@ -10,25 +10,39 @@ import { CourseCubeService } from '../../service/course-cube.service';
 })
 export class CourseCubeComponent implements OnInit {
   courseCubeList:Array<CourseCube> = new Array<CourseCube>();
-
+  heroInput:any = "";
   constructor(public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
-    this.getCourseCubeList();
+    this.getCourseCube();
   }
 
   addCourse(){
-    /*
+    
     let courseCube = new CourseCube();
     courseCube.id = 10;
 
     this.courseCubeList.push(courseCube);
-    */
+    
+    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse: Array<CourseCube>) => {
+      console.log(courseCubeResponse);
+    });
   }
 
-  getCourseCubeList(){
-    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse: Array<CourseCube>) => {
+  getCourseCube(){
+    this.courseCubeService.getCourseCube().subscribe(
+      //Success
+      (courseCubeResponse: Array<CourseCube>) => {
         this.courseCubeList = courseCubeResponse ? courseCubeResponse["courseCube"] :[];
-    });
+        this.courseCubeService.setCourseCubeList(this.courseCubeList);
+      },
+      // error
+      (error) => {
+        console.log(error);
+      },
+      // finally
+      ()=>{
+        console.log('finally');
+      });
   }
 }

@@ -11,6 +11,7 @@ import { CourseCubeComponent } from './container/course-cube/course-cube.compone
 import { UtilsComponent } from './container/utils/utils.component';
 import { LeftNavComponent } from './container/left-nav/left-nav.component';
 import { CourseCubeService } from './service/course-cube.service';
+import { CardComponent } from './container/course-cube/card/card.component';
 
 const appRoute :Routes=[
   {
@@ -35,7 +36,8 @@ const appRoute :Routes=[
     FooterComponent,
     CourseCubeComponent,
     UtilsComponent,
-    LeftNavComponent
+    LeftNavComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

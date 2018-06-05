@@ -1,32 +1,38 @@
-.user-data{
+.user-data {
     padding: 5px;
-    .card{
+    .card {
         width: 30%;
         float: left;
-        margin: 5px;
-        .header{
+        margin: 15px;
+        border: 1px solid $primary-color_1;
+        border-radius: 3px;
+        box-shadow: 4px 6px 5px $shadow-color;
+        .header {
             background: $primary-color;
-            border: 1px solid $primary-color_1;
-            padding: 5px;
-            h3{
+            padding: 15px;
+            h3 {
                 padding: 0px;
                 margin: 0px;
-                color:$font-color;
+                color: $font-color;
+                font-style: italic;
             }
         }
-        .content{
-            border: 1px solid $shadow_color;
-            .description{
-                label{
+        .content {
+            height: 150px;
+            padding: 2% 0%;
+            .description {
+                clear: both;
+                label {
                     width: 45%;
                     float: left;
-                    &.name{
+                    padding: 1% 2% 2% 3%;
+                    &.name {
                         color: $secondary-color;
                     }
-                    &.value{
+                    &.value {
                         color: $primary-color_2;
                     }
-                }   
+                }
             }
         }
     }
