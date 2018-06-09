@@ -12,10 +12,19 @@ import { UtilsComponent } from './container/utils/utils.component';
 import { LeftNavComponent } from './container/left-nav/left-nav.component';
 import { CourseCubeService } from './service/course-cube.service';
 import { CardComponent } from './container/course-cube/card/card.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoute :Routes=[
   {
-    path:'course-cube', component:CourseCubeComponent,
+    path:'home', component:HomeComponent,
+  },
+  {
+    path:'course-cube', component:ContainerComponent,
+    children:[
+      {
+        path:'',component:CourseCubeComponent
+      }
+    ]
   },
   {
     path:'utils', component:UtilsComponent,
@@ -37,7 +46,8 @@ const appRoute :Routes=[
     CourseCubeComponent,
     UtilsComponent,
     LeftNavComponent,
-    CardComponent
+    CardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
