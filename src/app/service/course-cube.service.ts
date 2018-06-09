@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CourseCubeService {
   //create an object of Subject
-  private courseCubeList: BehaviorSubject<any> = new BehaviorSubject<any>(false);
+  private courseCubeList: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   constructor(public http: HttpClient) { }
 
   setCourseCubeList(courseCubeList) {

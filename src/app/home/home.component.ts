@@ -11,8 +11,13 @@ export class HomeComponent implements OnInit {
   constructor(public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
-    this.getCourseCube();
-    
+    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse) => {
+      this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
+        if(courseCubeResponse.length === 0){
+          this.getCourseCube();
+        }
+
+    });
   }
 
   getCourseCube(){
