@@ -1,0 +1,29 @@
+<h1>
+    Add Course
+</h1>
+<ul *ngIf="errorMessage.length !== 0">
+  <li *ngFor="let error of errorMessage">
+    {{error}}
+  </li>
+</ul>
+<form [class]="submitted?'active':''">
+  <div class="form-element">
+    <label class="name">Course Name</label>
+    <input type="text" required [(ngModel)]="courseCube.courseName" name="courseName" class="value" />
+  </div>
+
+  <div class="form-element">
+    <label class="name">Course Duration</label>
+    <input type="text" autocomplete="off" required [(ngModel)]="courseCube.duration" name="duration" class="value" />
+  </div>
+
+  <div class="form-element">
+    <label class="name">Course Fee</label>
+    <input type="text" required [(ngModel)]="courseCube.fee" name="fee" class="value" />
+  </div>
+
+  <div class="btn-set">
+    <button (click)="save()" >Save</button>
+    <button routerLink="/course-cube" class="button-invert">Cancel</button>
+  </div>
+</form>
