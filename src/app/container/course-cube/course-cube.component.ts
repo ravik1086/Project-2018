@@ -9,18 +9,17 @@ import { CourseCubeService } from '../../service/course-cube.service';
   styleUrls: ['./course-cube.component.scss']
 })
 export class CourseCubeComponent implements OnInit {
-  courseCubeList:Array<CourseCube> = new Array<CourseCube>();
+  courseCubeList;
   heroInput:any = "";
   searchText = '';
   constructor(public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
-    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse: Array<CourseCube>) => {
+    this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse) => {
       this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
-        if(courseCubeResponse.length === 0){
-          this.getCourseCube();
-        }
-
+      if (courseCubeResponse.length === 0) {
+        this.getCourseCube();
+      }
     });
   }
 
@@ -28,8 +27,7 @@ export class CourseCubeComponent implements OnInit {
     this.courseCubeService.getCourseCube().subscribe(
       //Success
       (courseCubeResponse) => {
-        this.courseCubeList = courseCubeResponse ? courseCubeResponse["courseCube"] :[];
-        this.courseCubeService.setCourseCubeList(this.courseCubeList);
+        this.courseCubeList = courseCubeResponse ? courseCubeResponse :[];
       },
       // error
       (error) => {

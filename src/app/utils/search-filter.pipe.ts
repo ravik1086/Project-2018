@@ -6,11 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchFilterPipe implements PipeTransform {
 
   transform(dataSource: any, searchText: any): any {
-    if(searchText == null) return dataSource;
+    if(dataSource){
+      if(searchText == null) return dataSource;
 
-    return dataSource.filter(function(data){
-      return data.courseName.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
-    })
+      return dataSource.filter(function(data){
+        return data.courseName.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
+      })
+    }
+    
   }
 
 }

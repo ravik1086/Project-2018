@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +22,10 @@ export class CourseCubeService {
   }
 
   getCourseCube() {
-    return this.http.get('http://localhost:8081/coursecube');
+    return this.http.get(environment.API+'coursecube');
+  }
+
+  saveCourseCube(courseCube) {
+    return this.http.post(environment.API+'coursecube',courseCube);
   }
 }

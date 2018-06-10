@@ -22,15 +22,13 @@ export class CourseCubeFormComponent implements OnInit {
 
 
   ngOnInit() {
-    
+
     this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse) => {
       this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
-      if (courseCubeResponse.length === 0) {
+      if (courseCubeResponse && courseCubeResponse.length === 0) {
         this.getCourseCube();
       }
-
     });
-
     
   }
 
@@ -64,9 +62,22 @@ export class CourseCubeFormComponent implements OnInit {
     let isValidated = this.validate();
 
     if(isValidated){
-      this.courseCubeList.push(this.courseCube);
-      this.courseCubeService.setCourseCubeList(this.courseCubeList);
-      this.courseCube = new CourseCube();
+      this.courseCubeService.saveCourseCube(this.courseCube).subscribe(
+        //Success
+        (courseCubeResponse) => {
+          this.courseCubeList.push(this.courseCube);
+          this.courseCubeService.setCourseCubeList(this.courseCubeList);
+          this.courseCube = new CourseCube();
+        },
+        // error
+        (error) => {
+          console.log(error);
+        },
+        // finally
+        ()=>{
+          console.log('finally');
+        });
+      
     }
 
   }

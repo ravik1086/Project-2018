@@ -7,16 +7,16 @@ import { CourseCubeService } from '../service/course-cube.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  courseCubeList = [];
+  courseCubeList;
   constructor(public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
+   
     this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse) => {
       this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
-        if(courseCubeResponse.length === 0){
-          this.getCourseCube();
-        }
-
+      if (courseCubeResponse.length === 0) {
+        this.getCourseCube();
+      }
     });
   }
 
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.courseCubeService.getCourseCube().subscribe(
       //Success
       (courseCubeResponse) => {
-        this.courseCubeList = courseCubeResponse ? courseCubeResponse["courseCube"] :[];
+        this.courseCubeList = courseCubeResponse ? courseCubeResponse :[];
         this.courseCubeService.setCourseCubeList(this.courseCubeList);
       },
       // error

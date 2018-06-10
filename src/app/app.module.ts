@@ -40,10 +40,10 @@ const appRoute :Routes=[
     path:'utils', component:UtilsComponent,
   },
   {
-    path:'', redirectTo:'/course-cube',pathMatch:'full'
+    path:'', redirectTo:'/home',pathMatch:'full'
   },
   {
-    path:'**', component:CourseCubeComponent
+    path:'**', component:HomeComponent
   }
 ]
 
