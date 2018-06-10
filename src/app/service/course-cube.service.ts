@@ -20,6 +20,6 @@ export class CourseCubeService {
   }
 
   getCourseCube() {
-    return this.http.get('assets/resource/courseCube.json');
+    return this.http.get('http://localhost:8081/coursecube');
   }
 }

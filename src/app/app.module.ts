@@ -19,7 +19,7 @@ import { SearchFilterPipe } from './utils/search-filter.pipe';
 
 const appRoute :Routes=[
   {
-    path:'home', component:HomeComponent,
+    path:'home', component:HomeComponent
   },
   {
     path:'course-cube', component:ContainerComponent,
@@ -31,6 +31,10 @@ const appRoute :Routes=[
         path:'',component:CourseCubeComponent
       }
     ]
+  },
+  {
+    path:'student', component:ContainerComponent,
+    loadChildren:'src/app/container/student/student.module#StudentModule'
   },
   {
     path:'utils', component:UtilsComponent,
