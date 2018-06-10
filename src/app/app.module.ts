@@ -15,6 +15,7 @@ import { CourseCubeService } from './service/course-cube.service';
 import { CardComponent } from './container/course-cube/card/card.component';
 import { HomeComponent } from './home/home.component';
 import { CourseCubeFormComponent } from './container/course-cube/course-cube-form/course-cube-form.component';
+import { SearchFilterPipe } from './utils/search-filter.pipe';
 
 const appRoute :Routes=[
   {
@@ -53,7 +54,8 @@ const appRoute :Routes=[
     LeftNavComponent,
     CardComponent,
     HomeComponent,
-    CourseCubeFormComponent
+    CourseCubeFormComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,32 @@
-<div>
-  <button (click)="subject()">Subject</button>
-  <div *ngFor="let subject of subjectList">
-    {{subject}}
+<!-- body content-->
+<div class="body-container">
+  <div class="user-data">
+    <div>
+      <button (click)="subject()">Subject</button>
+      <div *ngFor="let subject of subjectList">
+        {{subject}}
+      </div>
+    </div>
+    -----------------------------------------------------
+    <div>
+      <button (click)="replaySubject()">Replay Subject</button>
+      <div *ngFor="let replaySubject of replaySubjectList">
+        {{replaySubject}}
+      </div>
+    </div>
+
+    -----------------------------------------------------
+    <div>
+      <button (click)="behaviorSubject()">Behavior Subject</button>
+      <div *ngFor="let behaviorSubject of behaviorSubjectList">
+        {{behaviorSubject}}
+      </div>
+    </div>
+
+    <h1> This is header 1</h1>
+
+    <h2> This is header 2</h2>
+
+    <h3> This is header 3</h3>
   </div>
 </div>
------------------------------------------------------
-<div>
-  <button (click)="replaySubject()">Replay Subject</button>
-  <div *ngFor="let replaySubject of replaySubjectList">
-    {{replaySubject}}
-  </div>
-</div>
-
------------------------------------------------------
-<div>
-  <button (click)="behaviorSubject()">Behavior Subject</button>
-  <div *ngFor="let behaviorSubject of behaviorSubjectList">
-    {{behaviorSubject}}
-  </div>
-</div>
-
-<h1> This is header 1</h1>
-
-<h2> This is header 2</h2>
-
-<h3> This is header 3</h3>

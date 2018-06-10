@@ -4,7 +4,7 @@ form {
     &.active{
         .form-element{
             .ng-invalid{
-                border: 1px solid $primary-color; 
+                border: 1px solid $error; 
             }
         }
     }
@@ -25,11 +25,12 @@ form {
     .btn-set{
         margin: 5px;
         button{
-            margin: 5px;
+            padding: 3px;
+            margin: 10px;
             background: $primary-color; 
             color: $font-color; 
             border:1px solid $primary-color_1;
-            font-size:15px;
+            font-size:18px;
             &.button-invert{
                 color: $primary-color; 
                 background: $font-color; 

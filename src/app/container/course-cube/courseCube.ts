@@ -3,4 +3,5 @@ export class CourseCube{
     courseName:string;
     duration:string;
     fee:number;
+    startDate:string;
 }

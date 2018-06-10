@@ -38,6 +38,18 @@ label{
     &.label-invert{
         @include font(15px, $secondary-color, $font);
     }
+
+    &.badge{
+        border: 1px solid  $shadow-color;
+        border-radius: 50%;
+        background: $shadow-color;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        padding: 5px;
+        float: right;
+        text-align: center;
+    }
 }
 
 a{

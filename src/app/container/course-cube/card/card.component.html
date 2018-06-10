@@ -1,5 +1,5 @@
 <div class="header">
-    <h3>{{course.courseName}}</h3>
+    <h3>{{course.courseName | uppercase }}</h3>
 </div>
 <div class="content">
     <div class="description">
@@ -15,6 +15,12 @@
     <div class="description">
         <label class="name">Fee</label>
         <label class="value">{{course.fee}}</label>
+    </div>
+
+
+    <div class="description">
+        <label class="name">Start Date</label>
+        <label class="value">{{course.startDate | date:"MMM/dd/yy"}}</label>
     </div>
 
 </div>

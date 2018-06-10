@@ -1,11 +1,16 @@
 <h1>
-    List of Course <button routerLink="/course-cube/add">Add</button>
+    List of Course
+    <button routerLink="/course-cube/add">Add</button>
 </h1>
+<form>
+    <div class="form-element">
+        <label class="name">Enter Search Text</label>
+        <input class="value" type="text" name="searchText" [(ngModel)]="searchText" placeholder="Search Course" />
+    </div>
+</form>
 
 <div class="user-data">
-    <div class="card" *ngFor="let course of courseCubeList">
-        <cc-card [course]="course" ></cc-card>
+    <div class="card" *ngFor="let course of courseCubeList| searchFilter: searchText">
+        <cc-card [course]="course"></cc-card>
     </div>
 </div>
-
-

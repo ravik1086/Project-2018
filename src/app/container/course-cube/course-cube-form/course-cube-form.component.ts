@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, KeyValueDiffers } from '@angular/core';
 
 import { CourseCubeService } from '../../../service/course-cube.service';
 import { CourseCube } from '../courseCube';
@@ -13,10 +13,16 @@ export class CourseCubeFormComponent implements OnInit {
   courseCubeList = [];
   errorMessage = [];
   submitted = false;
-  constructor(public courseCubeService: CourseCubeService) { }
+  differ;
+
+  constructor(public courseCubeService: CourseCubeService,
+    differs: KeyValueDiffers) {
+      this.differ = differs.find({}).create();
+     }
 
 
   ngOnInit() {
+    
     this.courseCubeService.getCourseCubeList().subscribe((courseCubeResponse) => {
       this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
       if (courseCubeResponse.length === 0) {
@@ -28,8 +34,9 @@ export class CourseCubeFormComponent implements OnInit {
     
   }
 
-  ngOnChange(changes: SimpleChanges){
-    console.log(changes);
+  ngDoCheck(){
+    let courseCube = this.differ.diff(this.courseCube);
+
     if(this.submitted){
       this.validate();
     }
@@ -85,6 +92,7 @@ export class CourseCubeFormComponent implements OnInit {
     }
 
     if(this.errorMessage.length == 0){
+      this.submitted = false;
       return true;
     }else{
       return false;
