@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs';
 
@@ -11,6 +11,13 @@ import { environment } from '../../environments/environment';
 export class CourseCubeService {
   //create an object of Subject
   private courseCubeList: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'courseCubeId': '123456789'
+    })
+  };
+
   constructor(public http: HttpClient) { }
 
   setCourseCubeList(courseCubeList) {
@@ -22,10 +29,11 @@ export class CourseCubeService {
   }
 
   getCourseCube() {
-    return this.http.get(environment.API+'coursecube');
+    
+    return this.http.get(environment.API + 'coursecube', this.httpOptions);
   }
 
   saveCourseCube(courseCube) {
-    return this.http.post(environment.API+'coursecube',courseCube);
+    return this.http.post(environment.API + 'coursecube', courseCube, this.httpOptions);
   }
 }

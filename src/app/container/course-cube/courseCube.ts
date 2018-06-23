@@ -4,4 +4,5 @@ export class CourseCube{
     duration:string;
     fee:number;
     startDate:string;
+    noOfStudents = [];
 }

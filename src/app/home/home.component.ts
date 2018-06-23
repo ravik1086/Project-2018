@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseCubeService } from '../service/course-cube.service';
+import { StudentService } from '../service/student.service';
 
 @Component({
   selector: 'cc-home',
@@ -8,7 +9,8 @@ import { CourseCubeService } from '../service/course-cube.service';
 })
 export class HomeComponent implements OnInit {
   courseCubeList;
-  constructor(public courseCubeService:CourseCubeService) { }
+  studentList;
+  constructor(public studentService:StudentService,public courseCubeService:CourseCubeService) { }
 
   ngOnInit() {
    
@@ -16,6 +18,13 @@ export class HomeComponent implements OnInit {
       this.courseCubeList = courseCubeResponse ? courseCubeResponse : [];
       if (courseCubeResponse.length === 0) {
         this.getCourseCube();
+      }
+    });
+
+    this.studentService.getStudentList().subscribe((studentResponse) => {
+      this.studentList = studentResponse ? studentResponse : [];
+      if (studentResponse.length === 0) {
+        this.getStudent();
       }
     });
   }
@@ -26,6 +35,22 @@ export class HomeComponent implements OnInit {
       (courseCubeResponse) => {
         this.courseCubeList = courseCubeResponse ? courseCubeResponse :[];
         this.courseCubeService.setCourseCubeList(this.courseCubeList);
+      },
+      // error
+      (error) => {
+        console.log(error);
+      },
+      // finally
+      ()=>{
+        console.log('finally');
+      });
+  }
+
+  getStudent(){
+    this.studentService.getStudent().subscribe(
+      //Success
+      (studentResponse) => {
+        this.studentList = studentResponse ? studentResponse :[];
       },
       // error
       (error) => {
