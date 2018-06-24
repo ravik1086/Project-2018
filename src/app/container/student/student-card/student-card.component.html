@@ -1,20 +1,32 @@
 <div class="header">
-  <h3>{{student.name | uppercase }}</h3>
+    <h3>{{student.name | uppercase }}
+        <button (click)="deleteStudent();">Delete</button>
+        <button (click)="edit();">Edit</button>
+    </h3>
 </div>
 <div class="content">
-  <div class="description">
-      <label class="name">ID</label>
-      <label class="value">{{student.id}}</label>
-  </div>
+    <div class="description">
+        <label class="name">ID</label>
+        <label class="value">{{student.id}}</label>
+    </div>
 
-  <div class="description">
-      <label class="name">age</label>
-      <label class="value">{{student.age}}</label>
-  </div>
+    <div class="description">
+        <label class="name">age</label>
+        <label class="value" *ngIf="!isEditable">{{student.age}}</label>
+        <input *ngIf="isEditable" type="text" ccOnlyNumber required [(ngModel)]="student.age" name="age" class="value" />
+    </div>
 
-  <div class="description">
-      <label class="name">courseName</label>
-      <label class="value">{{student.courseName}}</label>
-  </div>
+    <div class="description">
+        <label class="name">courseName</label>
+        <label class="value" *ngIf="!isEditable">{{student.courseName}}</label>
+        <select *ngIf="isEditable" class="value" [(ngModel)]="student.courseName" name="courseName">
+            <option value="">-Select Course-</option>
+            <option *ngFor="let course of courseCubeList" value="{{course.courseName}}">
+                {{course.courseName}}
+            </option>
+        </select>
+    </div>
+    <br/><br/>
+    <button (click)="save();" *ngIf="isEditable">Save</button>
 
 </div>

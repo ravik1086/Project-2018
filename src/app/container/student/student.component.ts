@@ -25,14 +25,6 @@ export class StudentComponent implements OnInit {
       //Success
       (studentResponse) => {
         this.studentList = studentResponse ? studentResponse :[];
-      },
-      // error
-      (error) => {
-        console.log(error);
-      },
-      // finally
-      ()=>{
-        console.log('finally');
       });
   }
 

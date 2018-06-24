@@ -14,7 +14,7 @@ export class CourseCubeService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'courseCubeId': '123456789'
+      'courseCubeId': '12345678'
     })
   };
 

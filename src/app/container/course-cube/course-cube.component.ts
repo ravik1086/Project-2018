@@ -65,14 +65,6 @@ export class CourseCubeComponent implements OnInit {
       //Success
       (courseCubeResponse) => {
         this.processCourseCubeRes(courseCubeResponse);
-      },
-      // error
-      (error) => {
-        console.log(error);
-      },
-      // finally
-      ()=>{
-        console.log('finally');
       });
   }
 
